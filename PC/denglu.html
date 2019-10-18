@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/dl.css">
+	<meta id="viewport" name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+	<script>
+        window.onload = window.onresize = function(){
+            var view_width = document.getElementsByTagName('html')[0].getBoundingClientRect().width;
+
+            var _html = document.getElementsByTagName('html')[0];
+            view_width>640?_html.style.fontSize = 640 / 16 + 'px':_html.style.fontSize = view_width / 16 + 'px';
+        }
+    </script>
+    <script>
+var _width = parseInt(window.screen.width);
+var scale = _width/640;
+var ua = navigator.userAgent.toLowerCase();
+var result = /android (\d+\.\d+)/.exec(ua);
+if (result){
+var version = parseFloat(result[1]);
+if(version>2.3){
+document.write('<meta name="viewport" content="width=640, minimum-scale = '+scale+', maximum-scale = '+scale+', target-densitydpi=device-dpi">');
+}else{
+document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+}
+} else {
+document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+}
+</script>
+</head>
+<body>
+   <div class="logo">
+   	<img src="images/logo.png"alt="">
+   </div>
+   <div class="list">
+     <ul>
+     	<li>
+     		<span>账号：</span>
+     		<input type="text">
+     	</li>
+     	<li>
+     		<span>密码：</span>
+     		<input type="password">
+     	</li>
+     </ul>
+   </div>	
+   <div class="a">
+   <ul class="a_list clearfix">
+   	<li>
+   		<a href="#">登录</a>
+   	</li>
+   	<li>
+   		<a href="#">注册</a>
+   	</li>
+   </ul>
+   	
+   </div>
+</body>
+</html>
